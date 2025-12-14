@@ -1,23 +1,21 @@
-import java.util.Scanner;
+public class Main{
+    public static void main(String[] args) {
 
-public class Main {
-    global a[][2]= {};
+        SocialNetwork network = new SocialNetwork("MySocial");
+        network.welcome();
 
-    public static void getquery() {
-        Scanner sc =  new Scanner(System.in);
-        System.out.println("введи имя");
-        String name = sc.nextline();
-        System.out.println(name + ", введите деньги");
-        String money = sc.nextline();
-        setDonatation(name, money);
+        Profile user1= new Profile("Alex",18);
+        Profile user2 = new Profile("Amir",20);
+
+        Post post1 = new Post("Hello world!");
+        Post post2 = new Post("Me first post");
+
+        post1.Like();
+        post2.Like();
+        post1.Like();
+
+        if(post1.getLikes() > post2.getLikes()) {
+            System.out.println("Post: " + post1.getContent() + "Has more likes than post: " + post2.getContent());
+        }
     }
-
-    Private static void setDonation(String name, string money){
-        auto name1 = 1;
-
-
-    }
-
-
-
 }
