@@ -7,15 +7,13 @@ public class Main{
         Profile user1= new Profile("Alex",18);
         Profile user2 = new Profile("Amir",20);
 
-        Post post1 = new Post("Hello world!");
-        Post post2 = new Post("Me first post");
+        user2.setBio("Student of AITU");
 
-        post1.Like();
-        post2.Like();
-        post1.Like();
+        network.addUser(user1);
+        network.addUser(user2);
 
-        if(post1.getLikes() > post2.getLikes()) {
-            System.out.println("Post: " + post1.getContent() + "Has more likes than post: " + post2.getContent());
-        }
+
+        ///
+        network.showUser();
     }
 }
