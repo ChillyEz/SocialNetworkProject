@@ -5,7 +5,7 @@ public class Main{
         network.welcome();
 
         Profile user1= new Profile("Alex",20);
-        Profile user2 = new Profile("Amir",20);
+        Profile user2 = new Profile("Amir",21);
 
         user2.setBio("Student of AITU");
 
