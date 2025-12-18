@@ -4,7 +4,7 @@ public class Main{
         SocialNetwork network = new SocialNetwork("MySocial");
         network.welcome();
 
-        Profile user1= new Profile("Alex",18);
+        Profile user1= new Profile("Alex",21git);
         Profile user2 = new Profile("Amir",20);
 
         user2.setBio("Student of AITU");
