@@ -1,33 +1,40 @@
-public class Profile {
-    private String username;
+import java.util.ArrayList;
+
+public class Profile extends User{
+    private ArrayList<Post> posts;
     private int age;
-    private String bio = "No bio yet";
 
     public Profile(String username, int age) {
-        this.username= username;
-        if (age >= 18 && age <150) {
-            this.age = age;
-        }else {
-            this.age = 0;
-            System.out.println("Failure: Your age is out of range");
+        super(username);
+        this.age = age;
+        posts = new ArrayList<>();
+    }
+
+    public int getAge(){ return age; }
+    public void setAge(int age){
+        if (age > 0 && age < 150) this.age = age;
+    }
+
+    public void addPost(Post post){
+        posts.add(post);
+    }
+
+    public void showPosts(){
+        for(Post p : posts){
+            p.printPost();
         }
     }
 
-    public String getUsername(){
-        return username;
+    @Override
+    public String toString(){
+        return "User: " + getUsername() + ", age=" + age + ", bio=" + getBio();
     }
-    public int getAge() {
-        return age;
-    }
-    public String getBio(){
-        return bio;
-    }
-    public void setBio(String bio){
-        if (bio != null && !bio.isEmpty()) {
-            this.bio = bio;
-        }
-    }
+
+    @Override
+    public String getRole(){ return "User";}
+
+    @Override
     public void printProfile(){
-        System.out.println("User: " + username + ", Age: " + age + ", Bio: " + bio);
+        System.out.println("User: " + getUsername() + ", Age: " + age +  ", Bio :" + getBio());
     }
 }

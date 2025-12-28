@@ -2,6 +2,7 @@ public class Post {
     private String content ;
     private int likes = 0;
 
+
     public Post(String content){
         this.content = content ;
     }
