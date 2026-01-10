@@ -46,4 +46,16 @@ public class SocialNetwork {
         }
         return result;
     }
+
+    public void sortUsersByUsername() {
+        for (int i = 0; i < users.size() - 1; i++) {
+            for (int j = 0; j < users.size() - i - 1; j++) {
+                if (users.get(j).getUsername().compareTo(users.get(j + 1).getUsername()) > 0) {
+                    User temp = users. get(j);
+                    users. set(j, users.get(j + 1));
+                    users.set(j + 1, temp);
+                }
+            }
+        }
+    }
 }

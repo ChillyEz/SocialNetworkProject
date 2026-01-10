@@ -18,4 +18,9 @@ public class Post {
     public void printPost(){
         System.out.println("Post: " + content + " | likes: " + likes);
     }
+    @Override
+    public String toString(){
+        return "Content: " + getContent() + ", likes: " + getLikes() ;
+    }
+
 }

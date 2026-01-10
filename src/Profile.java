@@ -37,4 +37,10 @@ public class Profile extends User{
     public void printProfile(){
         System.out.println("User: " + getUsername() + ", Age: " + age +  ", Bio :" + getBio());
     }
+
+    @Override
+    public int hashCode(){
+        return posts.hashCode();
+    }
+
 }
