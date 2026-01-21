@@ -1,7 +1,32 @@
+import com.sun.source.tree.TryTree;
+
 import java.util.ArrayList;
+import java.sql.*;
 
 public class Main{
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
+
+        String url = "jdbc:postgresql://localhost:5432/socialnetwork";
+        String username = "postgres";
+        String password = "0000";
+
+        try (Connection conn = DriverManager.getConnection(url, username, password)) {
+            CRUD crud = new CRUD(conn);
+
+            crud.addUser(new Profile("alex", 20));
+
+            User alex = crud.readUser("alex");
+            System.out.println("USER: " + alex.getUsername() + "/" + alex.getBio());
+
+            crud.updateUserBio("alex", "NEW bio!");
+
+            crud.deleteUser("alex");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
 
         SocialNetwork network = new SocialNetwork("MySocial");
         network.welcome();
